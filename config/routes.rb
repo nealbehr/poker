@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get '/', to: 'poker#deal'
+  get '/poker', to: 'poker#deal'
 end
