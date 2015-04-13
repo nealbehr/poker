@@ -1,3 +1,45 @@
 <h1>Welcome to the KIEI-925 Casino!</h1>
 
-<!-- Deal the cards here -->
+<p> We're going to deal you a five card hard! </p>
+
+<% numbers = [2,3,4,5,6,7,8,9,10,"ace", "jack", "queen", "king"] %>
+<% suits = ["clubs", "diamonds", "hearts", "spades"] %>
+
+
+<%
+duplicates = 5
+while duplicates > 0 do
+   cards = [[numbers.sample, suits.sample], [numbers.sample, suits.sample], [numbers.sample, suits.sample], [numbers.sample, suits.sample], [numbers.sample, suits.sample]]
+   duplicates = -5
+   cards.each do |curCard|
+      cards.each do |checkCard|
+         if curCard == checkCard
+            duplicates = duplicates + 1
+         end
+      end
+   end
+end
+%>
+
+
+
+<table>
+   <tr>
+      <td width = "120" align = "center"> <img src="http://golearntocode.com/images/cards/<%= cards[0][0] %>_of_<%= cards[0][1] %>.png" width= "60"> </td>
+      <td width = "120" align = "center"> <img src="http://golearntocode.com/images/cards/<%= cards[1][0] %>_of_<%= cards[1][1] %>.png" width= "60"> </td>
+      <td width = "120" align = "center"> <img src="http://golearntocode.com/images/cards/<%= cards[2][0] %>_of_<%= cards[2][1] %>.png" width= "60"> </td>
+      <td width = "120" align = "center"> <img src="http://golearntocode.com/images/cards/<%= cards[3][0] %>_of_<%= cards[3][1] %>.png" width= "60"> </td>
+      <td width = "120" align = "center"> <img src="http://golearntocode.com/images/cards/<%= cards[4][0] %>_of_<%= cards[4][1] %>.png" width= "60"> </td>
+   </tr>
+   <tr>
+      <td width = "120" align = "center"> <small> <%= cards[0][0] %> of <%= cards[0][1] %>  </small></td>
+      <td width = "120" align = "center"> <small> <%= cards[1][0] %> of <%= cards[1][1] %>  </small></td>
+      <td width = "120" align = "center"> <small> <%= cards[2][0] %> of <%= cards[2][1] %>  </small></td>
+      <td width = "120" align = "center"> <small> <%= cards[3][0] %> of <%= cards[3][1] %>  </small></td>
+      <td width = "120" align = "center"> <small> <%= cards[4][0] %> of <%= cards[4][1] %> </small> </td>
+   </tr>
+</table>
+
+
+</p>
+
